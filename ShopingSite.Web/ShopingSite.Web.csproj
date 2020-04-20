@@ -120,7 +120,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Item\Controllers\ItemController.cs" />
+    <Compile Include="Areas\Item\ItemAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="fonts\Entity\BaseEntity.cs" />
+    <Compile Include="fonts\Entity\Product\Product.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,6 +200,8 @@
     <Content Include="Content\OneTech\plugins\slick-1.8.0\fonts\slick.eot" />
     <Content Include="Content\OneTech\plugins\slick-1.8.0\fonts\slick.ttf" />
     <Content Include="Content\OneTech\plugins\slick-1.8.0\fonts\slick.woff" />
+    <Content Include="Areas\Item\Views\web.config" />
+    <Content Include="Areas\Item\Views\Item\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -227,12 +233,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Item\Data\" />
+    <Folder Include="Areas\Item\Views\Shared\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +253,12 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShoppinSite.Database\ShoppinSite.Database.csproj">
+      <Project>{e227fefa-9bc0-4aa0-aaf0-439dc21b5779}</Project>
+      <Name>ShoppinSite.Database</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
