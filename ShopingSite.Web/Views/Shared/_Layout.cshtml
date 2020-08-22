@@ -48,7 +48,7 @@
                             <div class="top_bar_user">
                                 <div class="user_icon"><img src="images/user.svg" alt=""></div>
                                 <div><a href="#">Register</a></div>
-                                <div><a href="#">Sign in</a></div>
+                                <div><a href="@Url.Action("Login", "Account")">Sign in</a></div>
                             </div>
                         </div>
                     </div>
@@ -144,7 +144,7 @@
                                     <div class="cat_menu_text">categories</div>
                                 </div>
 
-                                <ul class="cat_menu">
+                                @*<ul class="cat_menu">
                                     <li><a href="#">Computers & Laptops <i class="fas fa-chevron-right ml-auto"></i></a></li>
                                     <li><a href="#">Cameras & Photos<i class="fas fa-chevron-right"></i></a></li>
                                     <li class="hassubs">
@@ -170,7 +170,7 @@
                                     <li><a href="#">Car Electronics<i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="#">Video Games & Consoles<i class="fas fa-chevron-right"></i></a></li>
                                     <li><a href="#">Accessories<i class="fas fa-chevron-right"></i></a></li>
-                                </ul>
+                                </ul>*@
                             </div>
 
                             <!-- Main Nav Menu -->
@@ -614,7 +614,9 @@
         </div>
     </div>
 
-
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
 <script src="~/Scripts/OneTech/js/jquery-3.3.1.min.js"></script>

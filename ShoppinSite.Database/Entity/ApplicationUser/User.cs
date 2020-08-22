@@ -17,30 +17,46 @@ namespace ShoppinSite.Database.Entity.ApplicationUser
             CreatedDate = DateTime.Now;
         }
         public static object Identity { get; internal set; }
-        [Display(Name = "First Name")]
-        [StringLength(35)]
-        public string FirstName { get; set; }
-        [Display(Name = "Middle Name")]
-        [StringLength(35)]
-        public string MiddleName { get; set; }
-        [Display(Name = "Last Name")]
-        [StringLength(35)]
-        public string LastName { get; set; }
-        [Display(Name = "Full Name")]
-        [StringLength(35)]
-        public string FullName { get; set; }
-        [Column(TypeName ="VARCHAR")]
-        [StringLength(10)]
-        public string TitleOfCourtesy { get; set; }
-        [StringLength(10)]
-        public string Gender { get; set; }
-        public string District { get; set; }
-        public string VDCMunicipalaity { get; set; }
-        [StringLength(35)]
-        [Display(Name ="Address")]
-        public string LocalAddress { get; set; }
-        [StringLength(35)]
-        [Display(Name = "Telephone No")]
-        public string TelephoneNo { get; set; }
+        //[Display(Name = "First Name")]
+        //[StringLength(35)]
+        //public string FirstName { get; set; }
+        //[Display(Name = "Middle Name")]
+        //[StringLength(35)]
+        //public string MiddleName { get; set; }
+        //[Display(Name = "Last Name")]
+        //[StringLength(35)]
+        //public string LastName { get; set; }
+        //[Display(Name = "Full Name")]
+        //[StringLength(35)]
+        //public string FullName { get; set; }
+        //[Column(TypeName ="VARCHAR")]
+        //[StringLength(10)]
+        //public string TitleOfCourtesy { get; set; }
+        //[StringLength(10)]
+        //public string Gender { get; set; }
+        //public string District { get; set; }
+        //public string VDCMunicipalaity { get; set; }
+        //[StringLength(35)]
+        //[Display(Name ="Address")]
+        //public string LocalAddress { get; set; }
+        //[StringLength(35)]
+        //[Display(Name = "Telephone No")]
+        //public string TelephoneNo { get; set; }
+        public string Email { get; set; }
+        [Required()]
+        public bool EmailConfirmed { get; set; }
+        public string PasswordHash { get; set; }
+        public string PhoneNumber { get; set; }
+        [Required()]
+        public bool PhoneNumberConfirmed { get; set; }
+        [Required()]
+        public bool TwoFactorEnabled { get; set; }
+        public DateTime LockoutEndDateUtc { get; set; }
+        [Required()]
+        public bool LockoutEnabled { get; set; }
+        [Required()]
+        public int AccessFailedCount { get; set; }
+        [Required()]
+        public string UserName { get; set; }
     }
 }
