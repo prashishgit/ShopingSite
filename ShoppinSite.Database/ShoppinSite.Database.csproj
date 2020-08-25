@@ -66,12 +66,21 @@
     <Compile Include="Entity\BaseEntity.cs" />
     <Compile Include="Entity\Product\Product.cs" />
     <Compile Include="Enum\RecordStatus.cs" />
+    <Compile Include="Migrations\202008241548051_testing.cs" />
+    <Compile Include="Migrations\202008241548051_testing.Designer.cs">
+      <DependentUpon>202008241548051_testing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202008241548051_testing.resx">
+      <DependentUpon>202008241548051_testing.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

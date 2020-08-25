@@ -47,8 +47,22 @@
                             </div>
                             <div class="top_bar_user">
                                 <div class="user_icon"><img src="images/user.svg" alt=""></div>
-                                <div><a href="#">Register</a></div>
-                                <div><a href="@Url.Action("Login", "Account")">Sign in</a></div>
+                                @if (Request.IsAuthenticated)
+                                {
+                                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                    {
+    @Html.AntiForgeryToken()
+
+                                    @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                                        }
+                                    }
+                                    else
+                                    {
+                                    <div><a href="#">Register</a></div>
+                                    <div><a href="@Url.Action("Login", "Account")">Sign in</a></div>
+                                    }
+
                             </div>
                         </div>
                     </div>
