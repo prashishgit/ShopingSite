@@ -8,6 +8,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TMS.Database.Entity;
 
 namespace ShoppinSite.Database
 {
@@ -25,5 +26,6 @@ namespace ShoppinSite.Database
         public DbSet<User> User { get; set; }
         //public DbSet<UserGroup> UserGroup { get; set; }
         public DbSet<Banner> Banner{ get; set; }
+        public DbSet<ErrorLogger> ErrorLogger { get; set; }
     }
 }
