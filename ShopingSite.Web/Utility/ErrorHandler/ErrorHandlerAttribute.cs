@@ -1,10 +1,6 @@
 ﻿using ShopingSite.Infrastructure;
 using ShopingSite.Repository;
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using TMS.Database.Entity;
 
