@@ -3,7 +3,7 @@ namespace ShoppinSite.Database.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Useradded : DbMigration
+    public partial class CreatednewDatabase : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,22 @@ namespace ShoppinSite.Database.Migrations
                         Photo = c.String(maxLength: 50),
                         Title = c.String(),
                         ProductName = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "Base.ErrorLoggers",
+                c => new
+                    {
+                        Id = c.Guid(nullable: false),
+                        UserId = c.Guid(nullable: false),
+                        ControllerName = c.String(maxLength: 50, unicode: false),
+                        ExceptionMessage = c.String(maxLength: 2000),
+                        ExceptionStackTrace = c.String(maxLength: 4000),
+                        LogTime = c.DateTime(nullable: false),
+                        CreatedDate = c.DateTime(nullable: false),
+                        CreatedNepaliDate = c.String(maxLength: 20, unicode: false),
+                        NepaliLogTime = c.String(maxLength: 20, unicode: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -104,6 +120,7 @@ namespace ShoppinSite.Database.Migrations
             DropTable("User.RoleDetails");
             DropTable("User.Roles");
             DropTable("Item.Products");
+            DropTable("Base.ErrorLoggers");
             DropTable("Main.Banners");
         }
     }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,53 +11,50 @@ using System.Threading.Tasks;
 namespace ShoppinSite.Database.Entity.ApplicationUser
 {
     [Table("Users", Schema = "User")]
-    public class User : BaseEntity
+    public class User : IdentityUser<Guid, UserLogins, UserRoles, UserClaim>, IUser<Guid>
     {
         public User()
         {
             CreatedDate = DateTime.Now;
         }
         public static object Identity { get; internal set; }
-        //[Display(Name = "First Name")]
-        //[StringLength(35)]
-        //public string FirstName { get; set; }
-        //[Display(Name = "Middle Name")]
-        //[StringLength(35)]
-        //public string MiddleName { get; set; }
-        //[Display(Name = "Last Name")]
-        //[StringLength(35)]
-        //public string LastName { get; set; }
-        //[Display(Name = "Full Name")]
-        //[StringLength(35)]
-        //public string FullName { get; set; }
-        //[Column(TypeName ="VARCHAR")]
-        //[StringLength(10)]
-        //public string TitleOfCourtesy { get; set; }
-        //[StringLength(10)]
-        //public string Gender { get; set; }
-        //public string District { get; set; }
-        //public string VDCMunicipalaity { get; set; }
-        //[StringLength(35)]
-        //[Display(Name ="Address")]
-        //public string LocalAddress { get; set; }
-        //[StringLength(35)]
-        //[Display(Name = "Telephone No")]
-        //public string TelephoneNo { get; set; }
-        public string Email { get; set; }
+        [Display(Name = "First Name")]
+        [RegularExpression("^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,15}$",
+            ErrorMessage = "First Name,Please enter valid name")]
         [Required()]
-        public bool EmailConfirmed { get; set; }
-        public string PasswordHash { get; set; }
-        public string PhoneNumber { get; set; }
-        [Required()]
-        public bool PhoneNumberConfirmed { get; set; }
-        [Required()]
-        public bool TwoFactorEnabled { get; set; }
-        public DateTime LockoutEndDateUtc { get; set; }
-        [Required()]
-        public bool LockoutEnabled { get; set; }
-        [Required()]
-        public int AccessFailedCount { get; set; }
-        [Required()]
-        public string UserName { get; set; }
+        [StringLength(35)]
+        public string FirstName { get; set; }
+        [Display(Name = "Middle Name")]
+        [StringLength(35)]
+        public string MiddleName { get; set; }
+
+        [Display(Name = "Last Name")]
+        [RegularExpression("^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,15}$",
+            ErrorMessage = "Last Name,Please enter valid name")]
+        [StringLength(35)]
+        public string LastName { get; set; }
+        [Display(Name = "Full Name")]
+        [StringLength(105)]
+        public string FullName { get; set; }
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(10)]
+        public string TitleOfCourtesy { get; set; }
+        [Column(TypeName = "VARCHAR")]
+        [StringLength(10)]
+        public string Gender { get; set; }
+        [StringLength(35)]
+        public string State { get; set; }
+        [StringLength(35)]
+        public string District { get; set; }
+        [StringLength(35)]
+        [RegularExpression(@"^[A-Za-z1-9'][A-Za-z0-9' ,_-]{3,30}$", ErrorMessage = "Please enter Last Name between 3 to 30 characters.")]
+        [Display(Name = "VDC/Municipality")]
+        public string VDCMunicipality { get; set; }
+        [StringLength(35)]
+        [RegularExpression(@"^[A-Za-z1-9'][A-Za-z0-9' /,_-]{3,30}$", ErrorMessage = "Please enter Local Address between 3 to 30 characters.")]
+        [Display(Name = "Address")]
+        public string LocalAddress { get; set; }
+
+        public DateTime CreatedDate { get; set; }
     }
 }
