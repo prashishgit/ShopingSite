@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -7,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace ShoppinSite.Database.Entity.ApplicationUser
 {
-    [Table("Roles", Schema = "User")]
-    public class Role 
+    
+    public class Role : IdentityRole<Guid, UserRole>
     {
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        //public int Order { get; set; }
+        
     }
 }

@@ -8,10 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShoppinSite.Database.Entity.ApplicationUser
 {
-    [Table("Group", Schema = "User")]
-    public class UserLogins : IdentityUserLogin<Guid>
+    public class UserLogin : IdentityUserLogin<Guid>
     {
-        public string Name { get; set; }
-        public int? Order { get; set; }
     }
 }

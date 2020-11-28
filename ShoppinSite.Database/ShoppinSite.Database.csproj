@@ -58,22 +58,31 @@
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
     <Compile Include="Entity\ApplicationUser\UserClaim.cs" />
-    <Compile Include="Entity\ApplicationUser\UserLogins.cs" />
+    <Compile Include="Entity\ApplicationUser\UserLogin.cs" />
     <Compile Include="Entity\ApplicationUser\Role.cs" />
     <Compile Include="Entity\ApplicationUser\RoleDetail.cs" />
     <Compile Include="Entity\ApplicationUser\User.cs" />
-    <Compile Include="Entity\ApplicationUser\UserRoles.cs" />
+    <Compile Include="Entity\ApplicationUser\UserRole.cs" />
     <Compile Include="Entity\Bannner\Banner.cs" />
     <Compile Include="Entity\BaseEntity.cs" />
     <Compile Include="Entity\ErrorLogger.cs" />
     <Compile Include="Entity\Product\Product.cs" />
     <Compile Include="Enum\RecordStatus.cs" />
+    <Compile Include="Migrations\202011281520078_user changed.cs" />
+    <Compile Include="Migrations\202011281520078_user changed.Designer.cs">
+      <DependentUpon>202011281520078_user changed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202011281520078_user changed.resx">
+      <DependentUpon>202011281520078_user changed.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

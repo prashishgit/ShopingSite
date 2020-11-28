@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace ShoppinSite.Database.Entity.ApplicationUser
 {
-    [Table("UserGroups", Schema = "User")]
-    public class UserRoles : IdentityUserRole<Guid>
-    {
-       
+    
+    public class UserRole : IdentityUserRole<Guid>
+    {  
     }
 }
