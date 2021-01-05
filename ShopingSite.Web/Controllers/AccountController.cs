@@ -9,11 +9,12 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ShopingSite.Web.Models;
+using ShopingSite.Web.Utility.ErrorHandler;
 using ShoppinSite.Database.Entity.ApplicationUser;
 
 namespace ShopingSite.Web.Controllers
 {
-    [Authorize]
+    [ErrorHandler]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -152,7 +153,7 @@ namespace ShopingSite.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Email, Email = model.Email };
+                var user = new User { UserName = model.Email, Email = model.Email, FirstName="Test", LastName = "Test" };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
