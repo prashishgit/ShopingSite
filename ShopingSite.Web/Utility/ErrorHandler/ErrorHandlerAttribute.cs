@@ -22,13 +22,14 @@ namespace ShopingSite.Web.Utility.ErrorHandler
                     ControllerName = filterContext.RouteData.Values["controller"].ToString(),
                     LogTime = DateTime.Now,
                     //NepaliLogTime = Calendar.EnglishToNepali(DateTime.Now).ToString(),
-                    UserId = authenticationHelper.GetUserId()
+                    //UserId = authenticationHelper.GetUserId()
+                    UserId = new Guid()
                 };
 
                 var exceptionRepository = DependencyResolverExtensions.GetService<IErrorLoggerRepository>(DependencyResolver.Current);
                 var unitOfWork = DependencyResolverExtensions.GetService<IUnitOfWork>(DependencyResolver.Current);
-                exceptionRepository.Add(logger);
-                unitOfWork.Commit();
+                //exceptionRepository.Add(logger);
+                //unitOfWork.Commit();
 
                 filterContext.ExceptionHandled = true;
 
