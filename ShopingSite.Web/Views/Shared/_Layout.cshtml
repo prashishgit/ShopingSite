@@ -59,7 +59,7 @@
                                     }
                                     else
                                     {
-                                    <div><a href="@Url.Action("Register", "Account")">Register</a></div>
+                                    <div><a href="@Url.Action("Register", "User")">Register</a></div>
                                     <div><a href="@Url.Action("Login", "Account")">Sign in</a></div>
                                     }
 
@@ -237,6 +237,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="blog.html">Blog<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="@Url.Action("AdminIndex", "User", new { Area = "ApplicationUser" })">Admin Index<i class="fas fa-chevron-down"></i></a></li>
                                     <li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
                                 </ul>
                             </div>
