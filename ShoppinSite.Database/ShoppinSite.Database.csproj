@@ -66,7 +66,7 @@
     <Compile Include="Entity\Bannner\Banner.cs" />
     <Compile Include="Entity\BaseEntity.cs" />
     <Compile Include="Entity\ErrorLogger.cs" />
-    <Compile Include="Entity\Product\Product.cs" />
+    <Compile Include="Entity\Item\Product.cs" />
     <Compile Include="Enum\RecordStatus.cs" />
     <Compile Include="Migrations\202101141313319_database update.cs" />
     <Compile Include="Migrations\202101141313319_database update.Designer.cs">
