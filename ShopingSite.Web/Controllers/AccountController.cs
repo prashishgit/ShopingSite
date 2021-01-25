@@ -89,7 +89,7 @@ namespace ShopingSite.Web.Controllers
                     case SignInStatus.Failure:
                     default:
                         ModelState.AddModelError("", "Invalid login attempt.");
-                        return View(model);
+                        return PartialView(model);
                 }
             }
             catch (Exception ex)

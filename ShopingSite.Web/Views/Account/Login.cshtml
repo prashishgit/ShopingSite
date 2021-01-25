@@ -2,86 +2,96 @@
 @model LoginViewModel
 @{
     ViewBag.Title = "Log in";
-    Layout = "";
+    Layout = null;
 }
-<!--===============================================================================================-->
-<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
-<!--===============================================================================================-->
-<link href="~/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-<!--===============================================================================================-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shoping Site | Log in</title>
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link href="~/Content/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
 
-<link href="~/Content/Linearicons-Free-v1.0.0/icon-font.min.css" rel="stylesheet" />
-<!--===============================================================================================-->
-<link href="~/Content/Login/animate.css" rel="stylesheet" />
-<!--===============================================================================================-->
+    <link href="~/Content/Linearicons-Free-v1.0.0/icon-font.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Content/Login/animate.css" rel="stylesheet" />
+    <!--===============================================================================================-->
 
-<link href="~/Content/Login/hamburgers.min.css" rel="stylesheet" />
-<!--===============================================================================================-->
-<link href="~/Content/Login/animsition.min.css" rel="stylesheet" />
-<!--===============================================================================================-->
-<link href="~/Content/Login/select2.min.css" rel="stylesheet" />
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-<link href="~/Content/Login/util.css" rel="stylesheet" />
-<link href="~/Content/Login/main.css" rel="stylesheet" />
-<!--===============================================================================================-->
-
-
-<div class="limiter">
-    <div class="container-login100">
-        <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login100-form validate-form", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                @*<form class="login100-form validate-form">*@
-                <span class="login100-form-title p-b-33">
-                    Account Login
-                </span>
-
-                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Email">
-                    <span class="focus-input100-1"></span>
-                    <span class="focus-input100-2"></span>
-                </div>
-
-                <div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
-                    <input class="input100" type="password" name="Password" placeholder="Password">
-                    <span class="focus-input100-1"></span>
-                    <span class="focus-input100-2"></span>
-                </div>
-
-                <div class="container-login100-form-btn m-t-20">
-                    <button class="login100-form-btn">
-                        Sign in
-                    </button>
-                </div>
-
-                <div class="text-center p-t-45 p-b-4">
-                    <span class="txt1">
-                        Forgot
+    <link href="~/Content/Login/hamburgers.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Content/Login/animsition.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Content/Login/select2.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link href="~/Content/Login/util.css" rel="stylesheet" />
+    <link href="~/Content/Login/main.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Scripts/toastr/toastr.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login100-form validate-form", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @*<form class="login100-form validate-form">*@
+                    <span class="login100-form-title p-b-33">
+                        Account Login
                     </span>
 
-                    <a href="#" class="txt2 hov1">
-                        Username / Password?
-                    </a>
-                </div>
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="email" placeholder="Email">
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
 
-                <div class="text-center">
-                    <span class="txt1">
-                        Create an account?
-                    </span>
+                    <div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
+                        <input class="input100" type="password" name="Password" placeholder="Password">
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
 
-                    <a href="#" class="txt2 hov1">
-                        Sign up
-                    </a>
-                </div>
-                @*</form>*@
-            }
+                    <div class="container-login100-form-btn m-t-20">
+                        <button class="login100-form-btn">
+                            Sign in
+                        </button>
+                    </div>
+
+                    <div class="text-center p-t-45 p-b-4">
+                        <span class="txt1">
+                            Forgot
+                        </span>
+
+                        <a href="#" class="txt2 hov1">
+                            Username / Password?
+                        </a>
+                    </div>
+
+                    <div class="text-center">
+                        <span class="txt1">
+                            Create an account?
+                        </span>
+
+                        <a href="#" class="txt2 hov1">
+                            Sign up
+                        </a>
+                    </div>
+                    @*</form>*@
+                }
+            </div>
         </div>
     </div>
-</div>
-
+</body>
+</html>
 @*<div class="row">
         <div class="col-md-8">
             <section id="loginForm">
@@ -136,5 +146,5 @@
     </div>*@
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
 }

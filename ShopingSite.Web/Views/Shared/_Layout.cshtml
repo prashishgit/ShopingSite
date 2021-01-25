@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="~/Content/OneTech/plugins/slick-1.8.0/slick.css">
     <link href="~/Content/OneTech/styles/main_styles.css" rel="stylesheet" />
     <link href="~/Content/OneTech/styles/responsive.css" rel="stylesheet" />
+    <link href="~/Scripts/toastr/toastr.min.css" rel="stylesheet" />
 </head>
 <body>
     <header class="header">
@@ -51,17 +52,17 @@
                                 {
                                     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                                     {
-    @Html.AntiForgeryToken()
+                                        @Html.AntiForgeryToken()
 
-                                    @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                                    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
-                                        }
+                                        @Html.ActionLink("Hello " + User.Identity.Name + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                        <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
                                     }
-                                    else
-                                    {
-                                    <div><a href="@Url.Action("Register", "User")">Register</a></div>
+                                }
+                                else
+                                {
+                                    <div><a href="@Url.Action("Create", "User", new { Area = "ApplicationUser" })">Register</a></div>
                                     <div><a href="@Url.Action("Login", "Account")">Sign in</a></div>
-                                    }
+                                }
 
                             </div>
                         </div>
@@ -159,32 +160,32 @@
                                 </div>
 
                                 @*<ul class="cat_menu">
-                                    <li><a href="#">Computers & Laptops <i class="fas fa-chevron-right ml-auto"></i></a></li>
-                                    <li><a href="#">Cameras & Photos<i class="fas fa-chevron-right"></i></a></li>
-                                    <li class="hassubs">
-                                        <a href="#">Hardware<i class="fas fa-chevron-right"></i></a>
-                                        <ul>
-                                            <li class="hassubs">
-                                                <a href="#">Menu Item<i class="fas fa-chevron-right"></i></a>
-                                                <ul>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                    <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                            <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Smartphones & Tablets<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">TV & Audio<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Gadgets<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Car Electronics<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Video Games & Consoles<i class="fas fa-chevron-right"></i></a></li>
-                                    <li><a href="#">Accessories<i class="fas fa-chevron-right"></i></a></li>
-                                </ul>*@
+                                        <li><a href="#">Computers & Laptops <i class="fas fa-chevron-right ml-auto"></i></a></li>
+                                        <li><a href="#">Cameras & Photos<i class="fas fa-chevron-right"></i></a></li>
+                                        <li class="hassubs">
+                                            <a href="#">Hardware<i class="fas fa-chevron-right"></i></a>
+                                            <ul>
+                                                <li class="hassubs">
+                                                    <a href="#">Menu Item<i class="fas fa-chevron-right"></i></a>
+                                                    <ul>
+                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
+                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
+                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
+                                                        <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
+                                                <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
+                                                <li><a href="#">Menu Item<i class="fas fa-chevron-right"></i></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Smartphones & Tablets<i class="fas fa-chevron-right"></i></a></li>
+                                        <li><a href="#">TV & Audio<i class="fas fa-chevron-right"></i></a></li>
+                                        <li><a href="#">Gadgets<i class="fas fa-chevron-right"></i></a></li>
+                                        <li><a href="#">Car Electronics<i class="fas fa-chevron-right"></i></a></li>
+                                        <li><a href="#">Video Games & Consoles<i class="fas fa-chevron-right"></i></a></li>
+                                        <li><a href="#">Accessories<i class="fas fa-chevron-right"></i></a></li>
+                                    </ul>*@
                             </div>
 
                             <!-- Main Nav Menu -->
@@ -645,4 +646,6 @@
 <script src="~/Content/OneTech/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="~/Content/OneTech/plugins/slick-1.8.0/slick.js"></script>
 <script src="~/Content/OneTech/plugins/easing/easing.js"></script>
+<script src="~/Scripts/toastr/toastr.min.js"></script>
 <script src="~/Scripts/OneTech/js/custom.js"></script>
+<script src="~/Scripts/layout.js"></script>

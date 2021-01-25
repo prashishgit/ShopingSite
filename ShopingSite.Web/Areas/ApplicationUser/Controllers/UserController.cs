@@ -14,7 +14,12 @@ namespace ShopingSite.Web.Areas.ApplicationUser.Controllers
         {
             return View();
         }
+        [Authorize(Roles ="Admin")]
         public async Task<ActionResult> AdminIndex()
+        {
+            return View();
+        }
+        public async Task<ActionResult> Create()
         {
             return View();
         }

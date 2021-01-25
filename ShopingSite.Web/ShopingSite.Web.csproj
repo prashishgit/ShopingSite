@@ -457,6 +457,12 @@
     <Content Include="Content\OneTech\styles\responsive.css" />
     <Content Include="Content\OneTech\styles\shop_responsive.css" />
     <Content Include="Content\OneTech\styles\shop_styles.css" />
+    <Content Include="Content\Register\css\style.css" />
+    <Content Include="Content\Register\fonts\linearicons\fonts\Linearicons-Free.svg" />
+    <Content Include="Content\Register\fonts\linearicons\Read Me.txt" />
+    <Content Include="Content\Register\fonts\linearicons\style.css" />
+    <Content Include="Content\Register\images\image-1.png" />
+    <Content Include="Content\Register\images\image-2.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -517,6 +523,17 @@
     <Content Include="Content\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
     <Content Include="Areas\ApplicationUser\Views\web.config" />
     <Content Include="Areas\ApplicationUser\Views\User\AdminIndex.cshtml" />
+    <Content Include="Content\Register\css\style.css.map" />
+    <Content Include="Content\Register\css\style.scss" />
+    <Content Include="Content\Register\fonts\linearicons\fonts\Linearicons-Free.eot" />
+    <Content Include="Content\Register\fonts\linearicons\fonts\Linearicons-Free.ttf" />
+    <Content Include="Content\Register\fonts\linearicons\fonts\Linearicons-Free.woff" />
+    <Content Include="Content\Register\fonts\linearicons\fonts\Linearicons-Free.woff2" />
+    <Content Include="Content\Register\fonts\linearicons\selection.json" />
+    <Content Include="Content\Register\fonts\muli\Muli-Bold.ttf" />
+    <Content Include="Content\Register\fonts\muli\Muli-Regular.ttf" />
+    <Content Include="Content\Register\fonts\muli\Muli-SemiBold.ttf" />
+    <Content Include="Areas\ApplicationUser\Views\User\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -578,6 +595,7 @@
     <Content Include="Scripts\KAdmin\responsive-tabs.js" />
     <Content Include="Scripts\KAdmin\ui-nestable-list.js" />
     <Content Include="Scripts\KAdmin\zabuto_calendar.min.js" />
+    <Content Include="Scripts\layout.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\OneTech\js\blog_custom.js" />
     <Content Include="Scripts\OneTech\js\blog_single_custom.js" />
@@ -588,6 +606,11 @@
     <Content Include="Scripts\OneTech\js\product_custom.js" />
     <Content Include="Scripts\OneTech\js\regular_custom.js" />
     <Content Include="Scripts\OneTech\js\shop_custom.js" />
+    <Content Include="Scripts\Register\js\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\Register\js\main.js" />
+    <Content Include="Scripts\toastr\toastr.css" />
+    <Content Include="Scripts\toastr\toastr.min.css" />
+    <Content Include="Scripts\toastr\toastr.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
