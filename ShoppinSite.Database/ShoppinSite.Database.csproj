@@ -66,11 +66,12 @@
     <Compile Include="Entity\Bannner\Banner.cs" />
     <Compile Include="Entity\BaseEntity.cs" />
     <Compile Include="Entity\ErrorLogger.cs" />
+    <Compile Include="Entity\Item\Category.cs" />
     <Compile Include="Entity\Item\Product.cs" />
     <Compile Include="Enum\RecordStatus.cs" />
-    <Compile Include="Migrations\202101141313319_database update.cs" />
-    <Compile Include="Migrations\202101141313319_database update.Designer.cs">
-      <DependentUpon>202101141313319_database update.cs</DependentUpon>
+    <Compile Include="Migrations\202101261340125_added category table.cs" />
+    <Compile Include="Migrations\202101261340125_added category table.Designer.cs">
+      <DependentUpon>202101261340125_added category table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,8 +81,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101141313319_database update.resx">
-      <DependentUpon>202101141313319_database update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101261340125_added category table.resx">
+      <DependentUpon>202101261340125_added category table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
