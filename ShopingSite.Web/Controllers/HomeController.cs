@@ -12,6 +12,10 @@ namespace ShopingSite.Web.Controllers
         {
             return View();
         }
+        public ActionResult AdminIndex()
+        {
+            return View();
+        }
 
         public ActionResult About()
         {
