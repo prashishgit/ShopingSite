@@ -280,6 +280,8 @@
     <Content Include="Content\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Content\Image\KAdmin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Image\KAdmin\images\icons\loading.gif" />
     <Content Include="Content\KAdmin\all.css" />
     <Content Include="Content\KAdmin\animate.css" />
     <Content Include="Content\KAdmin\bootstrap.min.css" />
@@ -534,6 +536,10 @@
     <Content Include="Content\Register\fonts\muli\Muli-Regular.ttf" />
     <Content Include="Content\Register\fonts\muli\Muli-SemiBold.ttf" />
     <Content Include="Areas\ApplicationUser\Views\User\Create.cshtml" />
+    <Content Include="Content\Image\KAdmin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Image\KAdmin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Image\KAdmin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Image\KAdmin\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
