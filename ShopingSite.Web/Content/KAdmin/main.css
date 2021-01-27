@@ -7014,3 +7014,11 @@ ul.chats li.out .message {
   border-radius: 0px !important;
   border: 1px solid #e5e5e5;
 }
+.place-right {
+    
+    display: block;
+    text-align: right;
+    position: absolute;
+    top: 7px;
+    right: 28px;
+}

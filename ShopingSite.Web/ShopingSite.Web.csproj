@@ -258,6 +258,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\ApplicationUser\ApplicationUserAreaRegistration.cs" />
     <Compile Include="Areas\ApplicationUser\Controllers\UserController.cs" />
+    <Compile Include="Areas\Item\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Item\ItemAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -540,6 +542,8 @@
     <Content Include="Content\Image\KAdmin\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\Image\KAdmin\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\Image\KAdmin\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Item\Views\web.config" />
+    <Content Include="Areas\Item\Views\Category\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -659,6 +663,8 @@
     <Folder Include="Areas\ApplicationUser\Models\" />
     <Folder Include="Areas\ApplicationUser\Scripts\" />
     <Folder Include="Areas\ApplicationUser\Views\Shared\" />
+    <Folder Include="Areas\Item\Model\" />
+    <Folder Include="Areas\Item\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
