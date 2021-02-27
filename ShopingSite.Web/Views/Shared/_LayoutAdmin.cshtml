@@ -25,6 +25,7 @@
     <link type="text/css" rel="stylesheet" href="~/Content/KAdmin/pace.css">
     <link type="text/css" rel="stylesheet" href="~/Content/KAdmin/jquery.news-ticker.css">
     <link href="~/Content/DataTables-1.10.23/css/jquery.dataTables.min.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
     <div>
@@ -49,7 +50,7 @@
             <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-default navbar-static-top">
                 <div class="navbar-header">
                     <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                    <a id="logo" href="index.html" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">KAdmin</span><span style="display: none" class="logo-text-icon">µ</span></a>
+                    <a id="logo" href="index.html" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">Ecommerce</span><span style="display: none" class="logo-text-icon">µ</span></a>
                 </div>
                 <div class="topbar-main">
                     <a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
@@ -339,22 +340,7 @@
             <!--BEGIN PAGE WRAPPER-->
 
             <div id="page-wrapper">
-                <!--BEGIN TITLE & BREADCRUMB PAGE-->
-                <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
-                    <div class="page-header pull-left">
-                        <div class="page-title">
-                            Dashboard
-                        </div>
-                    </div>
-                    <ol class="breadcrumb page-breadcrumb pull-right">
-                        <li><i class="fa fa-home"></i>&nbsp;<a href="dashboard.html">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-                        <li class="hidden"><a href="#">Dashboard</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-                        <li class="active">Dashboard</li>
-                    </ol>
-                    <div class="clearfix">
-                    </div>
-                </div>
-                <!--END TITLE & BREADCRUMB PAGE-->
+                
                 <!--BEGIN CONTENT-->
                 @RenderBody()
                 <!--END CONTENT-->
@@ -369,6 +355,7 @@
             <!--END PAGE WRAPPER-->
         </div>
     </div>
+
     <script src="~/Scripts/KAdmin/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/KAdmin/jquery-migrate-1.2.1.min.js"></script>
@@ -388,28 +375,29 @@
     <script src="~/Scripts/KAdmin/holder.js"></script>
     <script src="~/Scripts/KAdmin/responsive-tabs.js"></script>
     @*<script src="~/Scripts/KAdmin/jquery.flot.js"></script>
-    <script src="~/Scripts/KAdmin/jquery.flot.categories.js"></script>
-    <script src="~/Scripts/KAdmin/jquery.flot.pie.js"></script>
-    <script src="~/Scripts/KAdmin/jquery.flot.tooltip.js"></script>*@
+        <script src="~/Scripts/KAdmin/jquery.flot.categories.js"></script>
+        <script src="~/Scripts/KAdmin/jquery.flot.pie.js"></script>
+        <script src="~/Scripts/KAdmin/jquery.flot.tooltip.js"></script>*@
     @*<script src="~/Scripts/KAdmin/jquery.flot.resize.js"></script>*@
     @*<script src="~/Scripts/KAdmin/jquery.flot.fillbetween.js"></script>
-    <script src="~/Scripts/KAdmin/jquery.flot.stack.js"></script>
-    <script src="~/Scripts/KAdmin/jquery.flot.spline.js"></script>*@
+        <script src="~/Scripts/KAdmin/jquery.flot.stack.js"></script>
+        <script src="~/Scripts/KAdmin/jquery.flot.spline.js"></script>*@
     <script src="~/Scripts/KAdmin/zabuto_calendar.min.js"></script>
     <script src="~/Scripts/KAdmin/index.js"></script>
     <!--LOADING SCRIPTS FOR CHARTS-->
     @*<script src="~/Scripts/KAdmin/highcharts.js"></script>*@
     @*<script src="~/Scripts/KAdmin/data.js"></script>*@
     @*<script src="~/Scripts/KAdmin/drilldown.js"></script>
-    <script src="~/Scripts/KAdmin/exporting.js"></script>*@
+        <script src="~/Scripts/KAdmin/exporting.js"></script>*@
     @*<script src="~/Scripts/KAdmin/highcharts-more.js"></script>
-    <script src="~/Scripts/KAdmin/charts-highchart-pie.js"></script>
-    <script src="~/Scripts/KAdmin/charts-highchart-more.js"></script>*@
+        <script src="~/Scripts/KAdmin/charts-highchart-pie.js"></script>
+        <script src="~/Scripts/KAdmin/charts-highchart-more.js"></script>*@
 
     <script src="~/Content/DataTables-1.10.23/js/jquery.dataTables.min.js"></script>
     <!--CORE JAVASCRIPT-->
 
     <script src="~/Scripts/KAdmin/main.js"></script>
+    
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;

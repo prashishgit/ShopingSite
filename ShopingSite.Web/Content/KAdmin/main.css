@@ -4209,7 +4209,7 @@ a.list-group-item.active > .badge,
   padding: 7px 15px;
   border-top-right-radius: 0 !important;
   border-top-left-radius: 0 !important;
-  border-color: #e5e5e5 !important;
+  /*border-color: #e5e5e5 !important;*/
 }
 .panel > .panel-footer {
   font-size: 18px;
