@@ -260,6 +260,7 @@
     <Compile Include="Areas\ApplicationUser\Controllers\UserController.cs" />
     <Compile Include="Areas\Item\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Item\ItemAreaRegistration.cs" />
+    <Compile Include="Areas\Item\Model\CategoryViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -274,10 +275,41 @@
     <Compile Include="Utility\ErrorHandler\ErrorHandlerAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Item\Scripts\Category\category.js" />
+    <Content Include="Areas\Item\Scripts\Category\datasource.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.23\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.23\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.23\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables-1.10.23\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables-1.10.23\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables-1.10.23\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables-1.10.23\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.23\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables-1.10.23\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables-1.10.23\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables-1.10.23\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.23\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.23\images\sort_asc.png" />
+    <Content Include="Content\DataTables-1.10.23\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables-1.10.23\images\sort_both.png" />
+    <Content Include="Content\DataTables-1.10.23\images\sort_desc.png" />
+    <Content Include="Content\DataTables-1.10.23\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables-1.10.23\js\dataTables.bootstrap.js" />
+    <Content Include="Content\DataTables-1.10.23\js\dataTables.bootstrap.min.js" />
+    <Content Include="Content\DataTables-1.10.23\js\dataTables.bootstrap4.js" />
+    <Content Include="Content\DataTables-1.10.23\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\DataTables-1.10.23\js\dataTables.foundation.js" />
+    <Content Include="Content\DataTables-1.10.23\js\dataTables.foundation.min.js" />
+    <Content Include="Content\DataTables-1.10.23\js\dataTables.jqueryui.js" />
+    <Content Include="Content\DataTables-1.10.23\js\dataTables.jqueryui.min.js" />
+    <Content Include="Content\DataTables-1.10.23\js\dataTables.semanticui.js" />
+    <Content Include="Content\DataTables-1.10.23\js\dataTables.semanticui.min.js" />
+    <Content Include="Content\DataTables-1.10.23\js\jquery.dataTables.js" />
+    <Content Include="Content\DataTables-1.10.23\js\jquery.dataTables.min.js" />
     <Content Include="Content\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="Content\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="Content\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
@@ -544,6 +576,7 @@
     <Content Include="Content\Image\KAdmin\fonts\FontAwesome.otf" />
     <Content Include="Areas\Item\Views\web.config" />
     <Content Include="Areas\Item\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Item\Views\Category\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -663,7 +696,6 @@
     <Folder Include="Areas\ApplicationUser\Models\" />
     <Folder Include="Areas\ApplicationUser\Scripts\" />
     <Folder Include="Areas\ApplicationUser\Views\Shared\" />
-    <Folder Include="Areas\Item\Model\" />
     <Folder Include="Areas\Item\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

@@ -5,56 +5,42 @@
 }
 
 
-<div class="col-lg-12">
-    <div class="panel panel">
+@*<div class="col-lg-12">
+    <div class="panel panel content-wrapper">
         <div class="panel-heading">
             Category
-            
-                <button type="submit" class="btn btn-primary place-right">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CategoryModal" id="create-btn">Add New</button>
+                <button id="create-btn" class="btn btn-primary place-right">
                   Add New
                 </button>
             
         </div>
         
         <div class="panel-body">
-            <table class="table table-hover-color">
+            <table id="table_id" class="display">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Username</th>
-                        <th>Age</th>
-                        <th>Status</th>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Henry</td>
-                        <td>23</td>
-                        <td><span class="label label-sm label-success">Approved</span></td>
+                        <td>Row 1 Data 1</td>
+                        <td>Row 1 Data 2</td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>John</td>
-                        <td>45</td>
-                        <td><span class="label label-sm label-info">Pending</span></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Larry</td>
-                        <td>30</td>
-                        <td><span class="label label-sm label-warning">Suspended</span></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Lahm</td>
-                        <td>15</td>
-                        <td><span class="label label-sm label-danger">Blocked</span></td>
+                        <td>Row 2 Data 1</td>
+                        <td>Row 2 Data 2</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-</div>
-
-
+</div>*@
+@*<script src="~/Areas/Item/Scripts/Category/category.js"></script>*@
+<script type="text/javascript">
+   $(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+</script>
