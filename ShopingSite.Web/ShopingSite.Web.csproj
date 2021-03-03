@@ -697,6 +697,7 @@
     <Folder Include="Areas\ApplicationUser\Scripts\" />
     <Folder Include="Areas\ApplicationUser\Views\Shared\" />
     <Folder Include="Areas\Item\Views\Shared\" />
+    <Folder Include="Scripts\dynamictable\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

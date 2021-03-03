@@ -1,98 +1,45 @@
 ﻿@model ShopingSite.Web.Areas.Item.Model.CategoryViewModel
 @{
     ViewBag.Title = "Create";
-    
+
 }
-    <div class="modal fade" id="CategoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="categoryModal" tabindex="-1">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Recipient:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                    @using (Html.BeginForm("Create", "Category", new { area = "Item" }, FormMethod.Post, new { id = "Category" }))
+                    {
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(x => x.Name, "Name", new { @class = "requiredLabel" })
+                                        @Html.ValidationMessageFor(model => model.Name)
+                                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control", placeholder = "Name" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(x => x.Description, "Description", htmlAttributes: new { @class = "requiredLabel" })
+                                        @Html.ValidationMessageFor(model => model.Description)
+                                        @Html.TextBoxFor(x => x.Description, new { @class = "form-control", placeholder = "Description" })
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">Message:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
+                    }
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
-@*<div class="col-lg-12">
-    <div class="panel panel-green">
-        <div class="panel-heading">
-            Category 
-        </div>
-        <div class="panel-body pan">
-            <form action="#">
-                <div class="form-body pal">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="inputName" class="control-label">
-                                    Name
-                                </label>
-                                <div class="input-icon right">
-                                    <i class="fa fa-user"></i>
-                                    <input id="inputName" type="text" placeholder="" class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="inputEmail" class="control-label">
-                                    E-mail
-                                </label>
-                                <div class="input-icon right">
-                                    <i class="fa fa-envelope"></i>
-                                    <input id="inputEmail" type="text" placeholder="" class="form-control" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputSubject" class="control-label">
-                            Subject
-                        </label>
-                        <div class="input-icon right">
-                            <i class="fa fa-tag"></i>
-                            <input id="inputSubject" type="text" placeholder="" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputMessage" class="control-label">
-                            Message
-                        </label><textarea rows="5" class="form-control"></textarea>
-                    </div>
-                    <div class="form-group mbn">
-                        <div class="checkbox">
-                            <label>
-                                <input tabindex="5" type="checkbox" />&nbsp; Send a copy to my e-mail address
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-actions text-right pal">
-                    <button type="submit" class="btn btn-primary">
-                        Send message
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-</div>*@
-
