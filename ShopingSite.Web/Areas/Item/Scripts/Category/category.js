@@ -10,5 +10,22 @@
             placeHolderElement.find('.modal').modal('show');
         })
     })
+    $("#btnSubmit").click(function () {
+        console.log('inside save');
+        $.ajax(
+            {
+                type: "POST", //HTTP POST Method  
+                url: "Category/Create", // Controller/View   
+                data: { //Passing data  
+                    Name: $("#Name").val(), //Reading text box values using Jquery   
+                    Description: $("#Description").val()
+                    
+                },
+                success: function (data) {
+                    console.log(data);
+                     successMessage(data.Message);
+                }  
 
+            }); 
+    });
 }); 

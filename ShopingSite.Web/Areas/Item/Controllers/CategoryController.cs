@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShopingSite.Web.Areas.Item.Model;
+using ShopingSite.Web.Models.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +19,17 @@ namespace ShopingSite.Web.Areas.Item.Controllers
         public async Task<ActionResult> Create()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<ActionResult> Create(CategoryViewModel categoryViewModel)
+        {
+            var response = new JsonResponse { Success = true };
+            if (ModelState.IsValid)
+            {
+
+            }
+            return Json(response);
+            
         }
     }
 }

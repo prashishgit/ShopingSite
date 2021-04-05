@@ -3,7 +3,7 @@ namespace ShoppinSite.Database.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class test : DbMigration
+    public partial class adddatabase : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,16 @@ namespace ShoppinSite.Database.Migrations
                         Photo = c.String(maxLength: 50),
                         Title = c.String(),
                         ProductName = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "Item.Category",
+                c => new
+                    {
+                        Id = c.Guid(nullable: false),
+                        Name = c.String(),
+                        Description = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -182,6 +192,7 @@ namespace ShoppinSite.Database.Migrations
             DropTable("User.RoleDetails");
             DropTable("Item.Products");
             DropTable("Base.ErrorLoggers");
+            DropTable("Item.Category");
             DropTable("Main.Banners");
         }
     }

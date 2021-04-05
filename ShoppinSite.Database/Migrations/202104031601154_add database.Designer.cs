@@ -7,13 +7,13 @@ namespace ShoppinSite.Database.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CreatednewDatabase : IMigrationMetadata
+    public sealed partial class adddatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreatednewDatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(adddatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011211216128_Created new Database"; }
+            get { return "202104031601154_add database"; }
         }
         
         string IMigrationMetadata.Source
