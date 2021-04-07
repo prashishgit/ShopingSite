@@ -60,7 +60,8 @@
                                 }
                                 else
                                 {
-                                    <div><a href="@Url.Action("Create", "User", new { Area = "ApplicationUser" })">Register</a></div>
+                                    @*<div><a href="@Url.Action("Create", "User", new { Area = "ApplicationUser" })">Register</a></div>*@
+                                    <div><a href="@Url.Action("Register", "Account")">Register</a></div>
                                     <div><a href="@Url.Action("Login", "Account")">Sign in</a></div>
                                 }
 

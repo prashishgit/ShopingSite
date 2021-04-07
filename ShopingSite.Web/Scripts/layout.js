@@ -18,19 +18,20 @@
         "hideMethod": "fadeOut"
     };
 
-    var successMessage = function (msg) {
-        
-        toastr.success(msg);
-    };
-    var errorMessage = function (msg) {
-        debugger
-        toastr.error(msg);
-    };
-    var infoMessage = function (msg) {
-        toastr.info(msg);
-    };
-    var warningMessage = function (msg) {
-        toastr.warning(msg);
-    };
+    
 
 });
+var successMessage = function (msg) {
+
+    toastr.success(msg);
+};
+var errorMessage = function (msg) {
+    debugger
+    toastr.error(msg);
+};
+var infoMessage = function (msg) {
+    toastr.info(msg);
+};
+var warningMessage = function (msg) {
+    toastr.warning(msg);
+};

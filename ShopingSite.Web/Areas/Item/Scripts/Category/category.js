@@ -23,7 +23,8 @@
                 },
                 success: function (data) {
                     console.log(data);
-                     successMessage(data.Message);
+                    successMessage(data.Message);
+                    
                 }  
 
             }); 

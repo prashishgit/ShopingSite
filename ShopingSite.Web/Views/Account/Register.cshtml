@@ -22,11 +22,13 @@
     <div class="wrapper">
         <div class="inner">
 
-            <form action="">
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
                 <h3>New Account?</h3>
                 <div class="form-holder">
                     <span class="lnr lnr-user"></span>
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="text" class="form-control" placeholder="Username" name="Email">
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-phone-handset"></span>
@@ -34,20 +36,20 @@
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-envelope"></span>
-                    <input type="text" class="form-control" placeholder="Mail">
+                    <input type="text" class="form-control" placeholder="Mail" name="Email">
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-lock"></span>
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Password" name="Password">
                 </div>
                 <div class="form-holder">
                     <span class="lnr lnr-lock"></span>
-                    <input type="password" class="form-control" placeholder="Confirm Password">
+                    <input type="password" class="form-control" placeholder="Confirm Password" name="ConfirmPassword">
                 </div>
-                <button>
+                <button type="submit">
                     <span>Register</span>
                 </button>
-            </form>
+            }
 
         </div>
 
