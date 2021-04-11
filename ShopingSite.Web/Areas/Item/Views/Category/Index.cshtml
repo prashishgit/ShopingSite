@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<ShopingSite.Web.Areas.Item.Model.CategoryViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -38,19 +38,22 @@
             <table id="cateogoryTable" class="display">
                 <thead>
                     <tr>
-                        <th>Column 1</th>
-                        <th>Column 2</th>
+                        <th>SN</th>
+                        <th>Name</th>
+                        <th>Description</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Row 1 Data 1</td>
-                        <td>Row 1 Data 2</td>
-                    </tr>
-                    <tr>
-                        <td>Row 2 Data 1</td>
-                        <td>Row 2 Data 2</td>
-                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="text-right">@item.SN</td>
+                            <td>@item.Name</td>
+                            <td>@item.Description</td>
+                        </tr>
+                    }
+
                 </tbody>
             </table>
         </div>
@@ -59,7 +62,7 @@
 <script src="~/Areas/Item/Scripts/Category/category.js"></script>
 
 <script>
-    $(document).ready( function () {
-    $('#cateogoryTable').DataTable();
-} );
+    $(document).ready(function () {
+        $('#cateogoryTable').DataTable();
+    });
 </script>

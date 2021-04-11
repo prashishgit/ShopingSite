@@ -19,7 +19,19 @@ namespace ShopingSite.Web.Areas.Item.Controllers
         // GET: Item/Category
         public ActionResult Index()
         {
-            return View();
+            List<CategoryViewModel> categoryViewModels = new List<CategoryViewModel>();
+            var categorList = _db.Category.ToList();
+            var count = 0;
+            foreach (var item in categorList)
+            {
+                categoryViewModels.Add(new CategoryViewModel()
+                {
+                    SN = ++count,
+                    Name = item.Name,
+                    Description = item.Description
+                });
+            }
+            return View(categoryViewModels);
         }
         public async Task<ActionResult> Create()
         {
