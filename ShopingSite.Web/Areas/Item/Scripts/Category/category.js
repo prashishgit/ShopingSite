@@ -11,7 +11,7 @@
         })
     })
     $("#btnSubmit").click(function () {
-        console.log('inside save');
+        
         $.ajax(
             {
                 type: "POST", //HTTP POST Method  
