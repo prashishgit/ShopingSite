@@ -26,6 +26,7 @@ namespace ShopingSite.Web.Areas.Item.Controllers
             {
                 categoryViewModels.Add(new CategoryViewModel()
                 {
+                    Id = item.Id,
                     SN = ++count,
                     Name = item.Name,
                     Description = item.Description

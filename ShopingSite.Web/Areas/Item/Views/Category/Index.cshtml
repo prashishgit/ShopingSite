@@ -41,17 +41,23 @@
                         <th>SN</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td class="text-right">@item.SN</td>
-                            <td>@item.Name</td>
-                            <td>@item.Description</td>
-                        </tr>
+                    <tr>
+                        <td class="text-right">@item.SN</td>
+                        <td>@item.Name</td>
+                        <td>@item.Description</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "button is-info" }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "button is-warning" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "button is-danger" })
+                        </td>
+                    </tr>
                     }
 
                 </tbody>
