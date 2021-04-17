@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IErrorLoggerRepository.cs" />
+    <Compile Include="Item\Category\Interface\ICategoryRepository.cs" />
+    <Compile Include="Item\Category\Service\CategoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

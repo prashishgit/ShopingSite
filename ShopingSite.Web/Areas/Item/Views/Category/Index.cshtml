@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ShopingSite.Web.Areas.Item.Model.CategoryViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!--BEGIN TITLE & BREADCRUMB PAGE-->
+<div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+    <div class="page-header pull-left">
+        <div class="page-title">
+            Category
+        </div>
+    </div>
+    <ol class="breadcrumb page-breadcrumb pull-right">
+        <li><i class="fa fa-home"></i>&nbsp;<a href="dashboard.html">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+        <li class="hidden"><a href="#">Category</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+        <li class="active">Category</li>
+    </ol>
+    <div class="clearfix">
+    </div>
+</div>
+<!--END TITLE & BREADCRUMB PAGE-->
+<div id="placeHolderElement"></div>
+<div class="col-lg-12">
+    <div class="panel panel content-wrapper">
+        <div class="panel-heading">
+            <ul class="pull-right">
+
+                <li style="list-style:none">
+                    <a class="btn btn-success" style="margin-bottom:10px" data-toggle="ajax-modal" data-target="#categoryModal" data-url="@Url.Action("Create","Category")"><i class="fa fa-plus"></i> Add New</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="panel-body">
+            <table id="cateogoryTable" class="display">
+                <thead>
+                    <tr>
+                        <th>SN</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td class="text-right">@item.SN</td>
+                        <td>@item.Name</td>
+                        <td>@item.Description</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-warning" }) |
+                            <button aria-label="Delete" class="new btn btn-danger btn-xs delete" id="btn-delete" data-id="@item.Id"  type="button" title="Delete">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="~/Areas/Item/Scripts/Category/category.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#cateogoryTable').DataTable();
+    });
+</script>

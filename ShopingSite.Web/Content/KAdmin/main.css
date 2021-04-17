@@ -4209,7 +4209,7 @@ a.list-group-item.active > .badge,
   padding: 7px 15px;
   border-top-right-radius: 0 !important;
   border-top-left-radius: 0 !important;
-  border-color: #e5e5e5 !important;
+  /*border-color: #e5e5e5 !important;*/
 }
 .panel > .panel-footer {
   font-size: 18px;
@@ -7013,4 +7013,12 @@ ul.chats li.out .message {
   -moz-border-radius: 0px !important;
   border-radius: 0px !important;
   border: 1px solid #e5e5e5;
+}
+.place-right {
+    
+    display: block;
+    text-align: right;
+    position: absolute;
+    top: 7px;
+    right: 28px;
 }

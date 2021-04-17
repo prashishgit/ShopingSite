@@ -22,7 +22,8 @@
     <div class="wrapper">
         <div class="inner">
 
-            <form action="">
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+            {
                 <h3>New Account?</h3>
                 <div class="form-holder">
                     <span class="lnr lnr-user"></span>
@@ -44,12 +45,12 @@
                     <span class="lnr lnr-lock"></span>
                     <input type="password" name="ConfirmPassword" class="form-control" placeholder="Confirm Password">
                 </div>
-                <button>
+                <button type="submit">
                     <span>Register</span>
                 </button>
-            </form>
+            }
 
-        </div>
+            </div>
 
     </div>
     <script src="~/Scripts/Register/js/jquery-3.3.1.min.js"></script>
