@@ -53,9 +53,11 @@
                         <td>@item.Name</td>
                         <td>@item.Description</td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "button is-info" }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "button is-warning" }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "button is-danger" })
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-warning" }) |
+                            <button aria-label="Delete" class="new btn btn-danger btn-xs delete" id="btn-delete" data-id="@item.Id"  type="button" title="Delete">
+                                <i class="fa fa-trash"></i>
+                            </button>
                         </td>
                     </tr>
                     }

@@ -11,7 +11,7 @@
         })
     })
     $("#btnSubmit").click(function () {
-        
+
         $.ajax(
             {
                 type: "POST", //HTTP POST Method  
@@ -19,14 +19,38 @@
                 data: { //Passing data  
                     Name: $("#Name").val(), //Reading text box values using Jquery   
                     Description: $("#Description").val()
-                    
+
                 },
                 success: function (data) {
                     console.log(data);
                     successMessage(data.Message);
-                    
-                }  
 
-            }); 
+                }
+
+            });
+    });
+    $('#btn-delete').click(function () {
+        debugger
+        var id = $(this).attr('data-id');
+
+        $.confirm({
+            title: 'Delete Category!',
+            content: 'Are you sure want to delete category?',
+            buttons: {
+                confirm: function () {
+                    $.ajax({
+                        url: 'Category/Delete',
+                        type: "POST",
+                        data: { id: id },
+                        success: function () {
+                            // does some stuff here...
+                        }
+                    });
+                },
+                cancel: function () {
+                    $.alert('Canceled!');
+                }
+            }
+        })
     });
 }); 
