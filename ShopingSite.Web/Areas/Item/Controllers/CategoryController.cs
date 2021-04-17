@@ -20,7 +20,7 @@ namespace ShopingSite.Web.Areas.Item.Controllers
         public ActionResult Index()
         {
             List<CategoryViewModel> categoryViewModels = new List<CategoryViewModel>();
-            var categorList = _db.Category.ToList();
+            var categorList = _db.Category.Where(p => p.RecordStatus == RecordStatus.Active).ToList();
             var count = 0;
             foreach (var item in categorList)
             {
@@ -30,6 +30,7 @@ namespace ShopingSite.Web.Areas.Item.Controllers
                     SN = ++count,
                     Name = item.Name,
                     Description = item.Description
+
                 });
             }
             return View(categoryViewModels);
@@ -50,6 +51,7 @@ namespace ShopingSite.Web.Areas.Item.Controllers
                     category.Id = Guid.NewGuid();
                     category.Name = categoryViewModel.Name;
                     category.Description = categoryViewModel.Description;
+                    category.RecordStatus = RecordStatus.Active;
                     _db.Category.Add(category);
                     _db.SaveChangesAsync();
                     response.Success = true;
@@ -71,6 +73,27 @@ namespace ShopingSite.Web.Areas.Item.Controllers
             }
             return Json(response);
             
+        }
+        [HttpPost]
+        public async Task<ActionResult> Delete(Guid id) 
+        {
+            var response = new JsonResponse { Success = true };
+            try
+            {
+                var category = _db.Category.Where(p => p.Id == id).FirstOrDefault();
+                category.RecordStatus = RecordStatus.Inactive;
+                _db.SaveChanges();
+                response.Success = true;
+                response.Message = MessageHandler.GetMessage(MessageStatus.Delete, "Category", category.Name);
+            }
+            catch (Exception ex)
+            {
+
+                response.Success = false;
+                response.Message = MessageHandler.GetMessage(MessageStatus.Error);
+            }
+            
+            return Json(response);
         }
     }
 }

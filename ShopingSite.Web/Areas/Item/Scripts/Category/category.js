@@ -15,22 +15,20 @@
         $.ajax(
             {
                 type: "POST", //HTTP POST Method  
-                url: "Category/Create", // Controller/View   
+                url: "/Category/Create", // Controller/View   
                 data: { //Passing data  
                     Name: $("#Name").val(), //Reading text box values using Jquery   
                     Description: $("#Description").val()
 
                 },
                 success: function (data) {
-                    console.log(data);
                     successMessage(data.Message);
-
+                    setTimeout(function () { location.reload(); }, 2000);
                 }
 
             });
     });
     $('#btn-delete').click(function () {
-        debugger
         var id = $(this).attr('data-id');
 
         $.confirm({
@@ -39,11 +37,13 @@
             buttons: {
                 confirm: function () {
                     $.ajax({
-                        url: 'Category/Delete',
+                        url: '/Category/Delete',
                         type: "POST",
                         data: { id: id },
-                        success: function () {
-                            // does some stuff here...
+                        success: function (data) {
+                            successMessage(data.Message);
+                            
+                            setTimeout(function () { location.reload(); }, 2000);
                         }
                     });
                 },
