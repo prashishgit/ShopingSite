@@ -18,7 +18,7 @@ namespace ShopingSite.Web.Controllers
         public ActionResult Index()
         {
             LayoutViewModel layoutViewModel = new LayoutViewModel();
-            List<Category> category = _db.Category.Where(p => p.RecordStatus == RecordStatus.Active).ToList();
+            List<Category> category = _db.Category.Where(p => p.RecordStatus == RecordStatus.Active).OrderBy(p => p.CreatedDate).Take(7).ToList();
             List<CategoryViewModel> categoryViewModelList = new List<CategoryViewModel>();
             foreach (var item in category)
             {
