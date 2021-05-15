@@ -7,6 +7,7 @@ using ShoppinSite.Database.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -73,6 +74,21 @@ namespace ShopingSite.Web.Areas.Item.Controllers
             }
             return Json(response);
             
+        }
+        [HttpGet]
+        public async Task<ActionResult> Edit(Guid id)
+        {
+            var response = new JsonResponse { Success = true };
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            CategoryViewModel categoryViewModel = new CategoryViewModel();
+            var category = _db.Category.Where(x => x.Id == id).FirstOrDefault();
+            categoryViewModel.Id = category.Id;
+            categoryViewModel.Name = category.Name;
+            categoryViewModel.Description = category.Description;
+            return PartialView("~/Areas/Item/Views/Category/Create.cshtml", categoryViewModel);
         }
         [HttpPost]
         public async Task<ActionResult> Delete(Guid id) 

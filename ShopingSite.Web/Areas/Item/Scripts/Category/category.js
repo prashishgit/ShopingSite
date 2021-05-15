@@ -28,7 +28,8 @@
 
             });
     });
-    $('#btn-delete').click(function () {
+    $('.delete').click(function () {
+        
         var id = $(this).attr('data-id');
 
         $.confirm({
@@ -53,4 +54,14 @@
             }
         })
     });
+
+    $('.edit').click(function () {
+        
+        var Id = $(this).attr('data-id');
+        var url = ['/Category/Edit/', Id].join('');
+        $.get(url).done(function (data) {
+            placeHolderElement.html(data);
+            placeHolderElement.find('.modal').modal('show');
+        })
+    })
 }); 

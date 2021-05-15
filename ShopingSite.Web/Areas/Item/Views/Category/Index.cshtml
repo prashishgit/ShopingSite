@@ -53,9 +53,12 @@
                         <td>@item.Name</td>
                         <td>@item.Description</td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) |
+                            
+                            <button aria-label="Edit" class="new btn btn-primary btn-xs edit" id="btn-edit" data-id="@item.Id" type="button" title="Edit" ata-toggle="ajax-modal" data-target="#categoryModal" data-url="@Url.Action("Edit","Category")">
+                                <i class="fas fa-edit"></i>
+                            </button> |
                             @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-warning" }) |
-                            <button aria-label="Delete" class="new btn btn-danger btn-xs delete" id="btn-delete" data-id="@item.Id"  type="button" title="Delete">
+                            <button aria-label="Delete" class="new btn btn-danger btn-xs delete" id="btn-delete" data-id="@item.Id" type="button" title="Delete">
                                 <i class="fa fa-trash"></i>
                             </button>
                         </td>
