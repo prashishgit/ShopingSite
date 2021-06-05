@@ -17,6 +17,7 @@
             <div class="modal-body">
                 @using (Html.BeginForm("Create", "Category", new { area = "Item" }, FormMethod.Post, new { id = "Category" }))
                 {
+                    @Html.HiddenFor(p => p.Id)
                     <div class="box-body">
                         <div class="row">
                             <div class="col-lg-6">

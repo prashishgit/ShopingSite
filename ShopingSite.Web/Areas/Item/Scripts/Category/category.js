@@ -11,12 +11,14 @@
         })
     })
     $("#btnSubmit").click(function () {
-
+        var $form = $("#categoryModal").find('#Category');
+        var url = $form.attr('action');
         $.ajax(
             {
                 type: "POST", //HTTP POST Method  
-                url: "/Category/Create", // Controller/View   
+                url: url,
                 data: { //Passing data  
+                    Id: $("#Id").val(),
                     Name: $("#Name").val(), //Reading text box values using Jquery   
                     Description: $("#Description").val()
 
@@ -62,6 +64,7 @@
         $.get(url).done(function (data) {
             placeHolderElement.html(data);
             placeHolderElement.find('.modal').modal('show');
+            placeHolderElement.find('.modal').find("#Category").attr("action", "/Category/Edit");
         })
     })
 }); 

@@ -90,6 +90,40 @@ namespace ShopingSite.Web.Areas.Item.Controllers
             categoryViewModel.Description = category.Description;
             return PartialView("~/Areas/Item/Views/Category/Create.cshtml", categoryViewModel);
         }
+
+        [HttpPost]
+        public async Task<ActionResult> Edit(CategoryViewModel categoryViewModel)
+        {
+            var response = new JsonResponse { Success = true };
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    var _categorydb = _db.Category.Where(p => p.Id == categoryViewModel.Id).FirstOrDefault();
+                    _categorydb.Id = categoryViewModel.Id;
+                    _categorydb.Name = categoryViewModel.Name;
+                    _categorydb.Description = categoryViewModel.Description;
+                    _categorydb.RecordStatus = RecordStatus.Active;
+                    _db.SaveChangesAsync();
+                    response.Success = true;
+                    response.Message = MessageHandler.GetMessage(MessageStatus.Update, "Category", categoryViewModel.Name);
+                }
+                catch (Exception ex)
+                {
+
+                    response.Success = false;
+                    response.Message = MessageHandler.GetMessage(MessageStatus.Error);
+                }
+            }
+            else
+            {
+                response.Success = false;
+                response.Message = string.Join(" </br> ", ModelState.Values
+         .SelectMany(v => v.Errors)
+         .Select(e => e.ErrorMessage));
+            }
+            return Json(response);
+        }
         [HttpPost]
         public async Task<ActionResult> Delete(Guid id) 
         {
