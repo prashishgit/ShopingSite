@@ -276,6 +276,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="Utility\ErrorHandler\ErrorHandlerAttribute.cs" />
     <Compile Include="Utility\MessageHandler.cs" />
+    <Compile Include="Utility\WebHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Item\Scripts\Category\category.js" />
@@ -284,6 +285,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Custom.css" />
     <Content Include="Content\DataTables-1.10.23\css\dataTables.bootstrap.css" />
     <Content Include="Content\DataTables-1.10.23\css\dataTables.bootstrap.min.css" />
     <Content Include="Content\DataTables-1.10.23\css\dataTables.bootstrap4.css" />

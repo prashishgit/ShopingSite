@@ -3,7 +3,7 @@
     //mainBody.find("#create").on('click', create);
     // Attach Button click event listener 
     var placeHolderElement = $('#placeHolderElement');
-    $('.btn-success[data-toggle="ajax-modal"]').click(function () {
+    $('.btn-primary[data-toggle="ajax-modal"]').off().click(function () {
         var url = $(this).data('url');
         $.get(url).done(function (data) {
             placeHolderElement.html(data);
@@ -24,13 +24,21 @@
 
                 },
                 success: function (data) {
-                    successMessage(data.Message);
-                    setTimeout(function () { location.reload(); }, 2000);
-                }
+                    if (data.success) {
+                        successMessage(data.Message);
+                        setTimeout(function () { location.reload();  }, 2000);
+                    }
+                    else {
+                        errorMessage(data.Message);
+                    }
+                    
+                },
+                
 
             });
+        
     });
-    $('.delete').click(function () {
+    $('.delete').off().click(function () {
         
         var id = $(this).attr('data-id');
 
@@ -57,7 +65,7 @@
         })
     });
 
-    $('.edit').click(function () {
+    $('.edit').off().click(function () {
         
         var Id = $(this).attr('data-id');
         var url = ['/Category/Edit/', Id].join('');
@@ -65,6 +73,7 @@
             placeHolderElement.html(data);
             placeHolderElement.find('.modal').modal('show');
             placeHolderElement.find('.modal').find("#Category").attr("action", "/Category/Edit");
+            placeHolderElement.find('.modal').find(".modal-title").text('Update Category');
         })
     })
 }); 
