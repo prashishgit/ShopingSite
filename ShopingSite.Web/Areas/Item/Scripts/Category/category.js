@@ -3,7 +3,7 @@
     //mainBody.find("#create").on('click', create);
     // Attach Button click event listener 
     var placeHolderElement = $('#placeHolderElement');
-    $('.btn-success[data-toggle="ajax-modal"]').click(function () {
+    $('.btn-primary[data-toggle="ajax-modal"]').off().click(function () {
         var url = $(this).data('url');
         $.get(url).done(function (data) {
             placeHolderElement.html(data);
@@ -11,24 +11,35 @@
         })
     })
     $("#btnSubmit").click(function () {
-
+        var $form = $("#categoryModal").find('#Category');
+        var url = $form.attr('action');
         $.ajax(
             {
                 type: "POST", //HTTP POST Method  
-                url: "/Category/Create", // Controller/View   
+                url: url,
                 data: { //Passing data  
+                    Id: $("#Id").val(),
                     Name: $("#Name").val(), //Reading text box values using Jquery   
                     Description: $("#Description").val()
 
                 },
                 success: function (data) {
-                    successMessage(data.Message);
-                    setTimeout(function () { location.reload(); }, 2000);
-                }
+                    if (data.Success) {
+                        successMessage(data.Message);
+                        setTimeout(function () { location.reload();  }, 2000);
+                    }
+                    else {
+                        errorMessage(data.Message);
+                    }
+                    
+                },
+                
 
             });
+        
     });
-    $('#btn-delete').click(function () {
+    $('.delete').off().click(function () {
+        
         var id = $(this).attr('data-id');
 
         $.confirm({
@@ -53,4 +64,16 @@
             }
         })
     });
+
+    $('.edit').off().click(function () {
+        
+        var Id = $(this).attr('data-id');
+        var url = ['/Category/Edit/', Id].join('');
+        $.get(url).done(function (data) {
+            placeHolderElement.html(data);
+            placeHolderElement.find('.modal').modal('show');
+            placeHolderElement.find('.modal').find("#Category").attr("action", "/Category/Edit");
+            placeHolderElement.find('.modal').find(".modal-title").text('Update Category');
+        })
+    })
 }); 

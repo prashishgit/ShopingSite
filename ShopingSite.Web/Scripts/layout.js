@@ -18,7 +18,13 @@
         "hideMethod": "fadeOut"
     };
 
-    
+    $('.table-striped').DataTable({
+        "paginate": false,
+        "sort": false,
+        "ordering": false,
+        "info": false
+    });
+
 
 });
 var successMessage = function (msg) {

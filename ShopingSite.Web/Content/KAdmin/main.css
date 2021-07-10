@@ -4544,9 +4544,10 @@ fieldset[disabled] .btn-primary.active {
   border-color: #da5f5f;
 }
 .btn-success {
-  color: #ffffff;
-  background-color: #5cb85c;
-  border-color: #55b555;
+    color: #ffffff;
+    background-color: #5cb85c;
+    border-color: #55b555;
+    
 }
 .btn-success:hover,
 .btn-success:focus,
@@ -7021,4 +7022,16 @@ ul.chats li.out .message {
     position: absolute;
     top: 7px;
     right: 28px;
+}
+.btn {
+    border-radius: 5px !important;
+}
+.pagination a {
+    border: 1px solid #ddd; /* Gray */
+}
+.dataTables_filter {
+    display: none;
+}
+.xxs {
+    width: 30px;
 }

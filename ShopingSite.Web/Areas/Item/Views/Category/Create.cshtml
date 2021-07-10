@@ -11,12 +11,14 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Add Category</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    @*<span aria-hidden="true">&times;</span>*@
+                    <i class="fa fa-times-circle" aria-hidden="true"></i>
                 </button>
             </div>
             <div class="modal-body">
                 @using (Html.BeginForm("Create", "Category", new { area = "Item" }, FormMethod.Post, new { id = "Category" }))
                 {
+                    @Html.HiddenFor(p => p.Id)
                     <div class="box-body">
                         <div class="row">
                             <div class="col-lg-6">
@@ -39,8 +41,7 @@
                 }
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary submitBtn" id="btnSubmit">Save changes</button>
+                <button type="button" class="btn btn-success submitBtn btn-xs" id="btnSubmit">Save changes</button>
             </div>
         </div>
     </div>
