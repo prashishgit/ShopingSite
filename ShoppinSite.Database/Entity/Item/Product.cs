@@ -18,6 +18,8 @@ namespace ShoppinSite.Database.Entity.Product
         public string Name { get; set; }
         public decimal Price { get; set; }
         public string Description { get; set; }
+        [StringLength(50)]
+        public string ImagePath { get; set; }
         [ForeignKey("CategoryId")]
         public Category Category { get; set; }
     }
