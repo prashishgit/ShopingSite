@@ -7026,3 +7026,12 @@ ul.chats li.out .message {
 .btn {
     border-radius: 5px !important;
 }
+.pagination a {
+    border: 1px solid #ddd; /* Gray */
+}
+.dataTables_filter {
+    display: none;
+}
+.xxs {
+    width: 30px;
+}

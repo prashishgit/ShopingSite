@@ -24,7 +24,7 @@
 
                 },
                 success: function (data) {
-                    if (data.success) {
+                    if (data.Success) {
                         successMessage(data.Message);
                         setTimeout(function () { location.reload();  }, 2000);
                     }

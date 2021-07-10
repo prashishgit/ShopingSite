@@ -100,7 +100,7 @@ namespace ShopingSite.Web.Areas.Item.Controllers
                 try
                 {
                     var _categorydb = _db.Category.Where(p => p.Id == categoryViewModel.Id).FirstOrDefault();
-                    _categorydb.Id = categoryViewModel.Id;
+                    _categorydb.Id = categoryViewModel.Id.Value;
                     _categorydb.Name = categoryViewModel.Name;
                     _categorydb.Description = categoryViewModel.Description;
                     _categorydb.RecordStatus = RecordStatus.Active;
